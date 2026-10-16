@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Call Drop</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎁</span>
+        <span class="logo-text">Call Drop</span>
+      </div>
+      <div class="user-info" id="userInfo">
+        <span id="userName">Загрузка...</span>
+      </div>
+    </header>
+
+    <!-- Balance Cards -->
+    <section class="balances">
+      <div class="balance-card">
+        <div class="balance-label">Баланс</div>
+        <div class="balance-value" id="balanceValue">0</div>
+        <div class="balance-sub">подарков</div>
+      </div>
+      <div class="balance-card staked">
+        <div class="balance-label">В стейкинге</div>
+        <div class="balance-value" id="stakedValue">0</div>
+        <div class="balance-sub">подарков</div>
+      </div>
+    </section>
+
+    <!-- Main Actions -->
+    <section class="actions">
+      <button class="btn btn-primary" id="stakeBtn">
+        <span class="btn-icon">🔒</span>
+        <span>Застейкать</span>
+      </button>
+      <button class="btn btn-secondary" id="unstakeBtn">
+        <span class="btn-icon">🔓</span>
+        <span>Забрать</span>
+      </button>
+    </section>
+
+    <!-- Stake Modal -->
+    <div class="modal" id="stakeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Застейкать подарки</h3>
+          <button class="close-btn" data-close>×</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">Сколько подарков хочешь застейкать?</p>
+          <input type="number" id="stakeAmount" placeholder="Введите число" min="1" />
+          <div class="quick-amounts">
+            <button class="quick-btn" data-amount="10">10</button>
+            <button class="quick-btn" data-amount="50">50</button>
+            <button class="quick-btn" data-amount="100">100</button>
+            <button class="quick-btn" data-amount="all">Всё</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary full" id="confirmStake">Подтвердить</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unstake Modal -->
+    <div class="modal" id="unstakeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Забрать из стейкинга</h3>
+          <button class="close-btn" data-close>×</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">Сколько подарков забрать?</p>
+          <input type="number" id="unstakeAmount" placeholder="Введите число" min="1" />
+          <div class="quick-amounts">
+            <button class="quick-btn" data-amount="10">10</button>
+            <button class="quick-btn" data-amount="50">50</button>
+            <button class="quick-btn" data-amount="100">100</button>
+            <button class="quick-btn" data-amount="all">Всё</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary full" id="confirmUnstake">Забрать</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <section class="info-section">
+      <h3>Как это работает</h3>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">1️⃣</div>
+          <div class="info-text">Стейкай подарки и получай награды</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">2️⃣</div>
+          <div class="info-text">Чем дольше стейк — тем больше профит</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">3️⃣</div>
+          <div class="info-text">Забирай когда угодно без штрафов</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Call Drop • Стейкинг подарков</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
